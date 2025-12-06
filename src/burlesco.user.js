@@ -35,6 +35,7 @@
 // @match        *://*.nytimes.com/*
 // @match        *://*.nyt.com/*
 // @match        *://*.oglobo.globo.com/*
+// @match        *://*.valor.globo.com/*
 // @match        *://api.tinypass.com/*
 // @match        *://cdn.tinypass.com/*
 // @match        *://dashboard.tinypass.com/*
@@ -254,6 +255,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const observer = new MutationObserver(() => {
           document.querySelectorAll('.barreiraJornada').forEach(div => div.remove());
           document.querySelectorAll('.mobiliarioFooter').forEach(div => div.remove());
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    `;
+  }
+
+  else if (/valor\.globo\.com/.test(document.location.host)) {
+    code = `
+      window.addEventListener('DOMContentLoaded', () => {
+        const observer = new MutationObserver(() => {
+          document.querySelectorAll('.barreiraJornada').forEach(div => div.remove());
+          document.querySelectorAll('.mobiliarioFooter').forEach(div => div.remove());
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
         });
 
         observer.observe(document.body, { childList: true, subtree: true });
