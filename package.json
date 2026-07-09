@@ -1,5 +1,10 @@
 {
-  "dependencies": {
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint src/"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
     "eslint": "^8.19.0"
   }
 }
