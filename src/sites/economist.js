@@ -1,5 +1,5 @@
 export default function() {
-  document.cookie = "ec_limit=allow";
+  document.cookie = 'ec_limit=allow';
   return `
     var artBodyContainer = document.querySelector("article.article");
     var artBody = artBodyContainer.innerHTML;

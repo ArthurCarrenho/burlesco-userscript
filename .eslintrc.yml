@@ -4,6 +4,7 @@ env:
   greasemonkey: true
 parserOptions:
   ecmaVersion: 2020
+  sourceType: module
 extends: 'eslint:recommended'
 rules:
   indent:
@@ -19,5 +20,4 @@ rules:
     - error
     - always
   max-len:
-    - 1
-    - code: 80
+    - off
