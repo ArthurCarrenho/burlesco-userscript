@@ -19,7 +19,7 @@ async function build() {
   }
 
   if (matches.length > 0) {
-    const webrequests = `// @webRequest [${matches.join(',')}]\\n`;
+    const webrequests = `// @webRequest [${matches.join(',')}]\n`;
     let isFirst = true;
     header = header.replace(new RegExp('// @webRequestItem .+\\\\n', 'g'), () => {
       if (isFirst) {
@@ -35,7 +35,7 @@ async function build() {
   
   if (!fs.existsSync('dist')) fs.mkdirSync('dist');
   
-  fs.writeFileSync('dist/burlesco.user.js', header + '\\n' + bundle);
+  fs.writeFileSync('dist/burlesco.user.js', header + '\n' + bundle);
   console.log('Arquivo buildado salvo em: dist/burlesco.user.js');
 }
 
