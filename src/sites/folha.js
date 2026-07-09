@@ -13,6 +13,14 @@ export default function() {
         return originalFetch.apply(this, arguments);
     };
 
+    const style = document.createElement('style');
+    style.textContent = '.c-top-signup-inner, .c-subscribe-ads { display: none !important; }';
+    if (document.head) {
+      document.head.appendChild(style);
+    } else {
+      document.documentElement.appendChild(style);
+    }
+
     const observer = new MutationObserver(() => {
       const pFill = document.querySelector('#paywall-fill');
       if (pFill) pFill.remove();
