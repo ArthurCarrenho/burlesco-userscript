@@ -11,8 +11,8 @@ export default function() {
 
       const parts = data[key].article_body_components
         .map(item => {
-          if (item.html) return `<div class="article-paragraph">${item.html}</div>`;
-          if (item.data && item.data.embed) return `<div class="article-paragraph">${item.data.embed}</div>`;
+          if (item.html) return '<div class="article-paragraph">' + item.html + '</div>';
+          if (item.data && item.data.embed) return '<div class="article-paragraph">' + item.data.embed + '</div>';
           return '';
         })
       const content = parts.join('')
