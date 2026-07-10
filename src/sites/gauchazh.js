@@ -1,13 +1,19 @@
-import { eraseCookie } from '../utils.js';
-
 export default function() {
-  eraseCookie('xbc');
-  eraseCookie('_pcid');
-  eraseCookie('_pcus');
-  eraseCookie('__tbc');
-  eraseCookie('__pvi');
-  eraseCookie('_pctx');
-  eraseCookie('__pat');
+  localStorage.clear();
+  sessionStorage.clear();
+
+  const cookieList = document.cookie.split(/;\s*/);
+  for (let i = 0; i < cookieList.length; i++) {
+    const split = cookieList[i].split('=');
+    const name = split[0].trim();
+    if (name) {
+      document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = name + '=; path=/; domain=clicrbs.com.br; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = name + '=; path=/; domain=.clicrbs.com.br; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = name + '=; path=/; domain=gauchazh.clicrbs.com.br; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = name + '=; path=/; domain=.gauchazh.clicrbs.com.br; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+  }
 
   return `
     (async () => {
