@@ -1,4 +1,14 @@
+import { eraseCookie } from '../utils.js';
+
 export default function() {
+  eraseCookie('xbc');
+  eraseCookie('_pcid');
+  eraseCookie('_pcus');
+  eraseCookie('__tbc');
+  eraseCookie('__pvi');
+  eraseCookie('_pctx');
+  eraseCookie('__pat');
+
   return `
     (async () => {
       const observer = new MutationObserver(() => {
