@@ -60,7 +60,7 @@ export default function() {
         document.body.classList.remove('tp-modal-open');
 
         var style = document.createElement('style');
-        style.textContent = '.paid-content-template, .tp-backdrop, .tp-modal { display: none !important; } getsitecontrol-widget { display: none !important; } a[href*="google.com/preferences/source"], a[href*="google.com/preferences/source"] + div { display: none !important; }';
+        style.textContent = '.paid-content-template, .tp-backdrop, .tp-modal, #privacy-tools-banner { display: none !important; } getsitecontrol-widget { display: none !important; } a[href*="google.com/preferences/source"], a[href*="google.com/preferences/source"] + div { display: none !important; }';
         (document.head||document.documentElement).appendChild(style);
 
         break;
