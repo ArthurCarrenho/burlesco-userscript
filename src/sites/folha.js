@@ -34,6 +34,9 @@ export default function() {
       const pScreen = document.querySelector('#paywall-screen');
       if (pScreen) pScreen.remove();
       
+      const rsSkip = document.querySelector('#comentarios > footer > div.rs_skip');
+      if (rsSkip) rsSkip.remove();
+      
       if (document.documentElement.style.overflow === 'hidden') {
         document.documentElement.style.overflow = 'auto';
         document.documentElement.style.height = 'auto';
