@@ -26,6 +26,7 @@ import seudinheiroIdle from './sites/seudinheiro.js';
 import observadorIdle from './sites/observador.js';
 import technologyreviewIdle from './sites/technologyreview.js';
 import galileuIdle from './sites/galileu.js';
+import infomoneyIdle from './sites/infomoney.js';
 
 const startSites = [
   { domain: /jota\.info/, handler: jotaStart },
@@ -58,7 +59,8 @@ const idleSites = [
   { domain: /seudinheiro\.com/, handler: seudinheiroIdle },
   { domain: /observador\.pt/, handler: observadorIdle },
   { domain: /technologyreview\.com/, handler: technologyreviewIdle },
-  { domain: /revistagalileu\.globo\.com/, handler: galileuIdle }
+  { domain: /revistagalileu\.globo\.com/, handler: galileuIdle },
+  { domain: /infomoney\.com\.br/, handler: infomoneyIdle }
 ];
 
 const host = document.location.host;
